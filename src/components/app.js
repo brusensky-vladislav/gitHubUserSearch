@@ -3,11 +3,11 @@ import Toolbar from './toolbar';
 import Search from './search';
 
 export default function App() {
-    const hi = 'Hello world';
+    const hi = 'GitHub Search';
     return (
         <section id="page" className="container">
             <header>
-                <Toolbar />
+                <Toolbar text={hi} />
             </header>
             <main>
                 <Search />
