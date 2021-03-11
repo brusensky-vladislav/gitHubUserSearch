@@ -1,0 +1,20 @@
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-areas: "h h h"
+    "m m m";
+    grid-template-rows: 65px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+header {
+    grid-area: h;
+    background-color: #673ab7;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+main {
+    grid-area: m;
+    display: flex;
+    justify-content: center;
+}
