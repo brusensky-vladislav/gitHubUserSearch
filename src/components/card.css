@@ -1,0 +1,47 @@
+.card {
+    width: 500px;
+    padding: 25px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+}
+.card__header {}
+.card__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 10px;
+}
+.card__subtitle {
+    font-size: 16px;
+    color: rgb(139, 139, 139);
+    margin-bottom: 10px;
+}
+.card__avatar {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.card__content {
+    margin-bottom: 10px;
+}
+.card__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.a-button {
+    display: flex;
+    align-items: center;
+    
+    width: 110px;
+    height: 36px;
+    padding: 0 16px;
+    
+    
+    background-color: #673ab7;
+    border-radius: 5px;
+}
+.a-button span {
+    font-weight: 600;
+    color: #fff;
+}
