@@ -22,9 +22,7 @@ export default class Search extends React.Component {
         }
     };
     componentDidUpdate(nextProps) {
-        // console.log(`${this.props.searchStr.length} and min ${this.minLength}`)
-        // if(this.props.searchStr.length >= this.minLength) {
-        // if(nextProps.searchStr !== this.props.searchStr) {
+        if(nextProps.searchStr !== this.props.searchStr && this.props.searchStr.length >= this.minLength) {
             fetch(`https://api.github.com/users/${this.props.searchStr}`)
                 .then(res => res.json())
                 .then((result) => {
@@ -33,8 +31,7 @@ export default class Search extends React.Component {
                         user: result,
                     });
                 });
-            // }
-        // }
+        }
     }
     render() {
         const dispatch = this.props.dispatch;
