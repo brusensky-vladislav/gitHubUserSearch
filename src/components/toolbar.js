@@ -5,6 +5,6 @@ export default function Toolbar(props) {
         fontFamily: '"Helvetica Neue", sans-serif',
     };
     return (
-        <span style={styles} className="toolbar-text">{props.text}</span>
+        <span style={styles} className="toolbar-text">GitHub Search</span>
     );
 }

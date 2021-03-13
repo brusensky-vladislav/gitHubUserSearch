@@ -1,38 +1,27 @@
-import React from 'react';
-import Card from './card';
+import React, { useEffect, useState } from 'react';
 import './search.css';
 
-export default class Search extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            error: null,
-            isLoaded: false,
-            user: {},
-        }
-    };
+export default function Search(props)  {
+    const [searchStr, setSearchStr] = useState('');
 
-    componentDidMount() {
-        fetch(`https://api.github.com/users/facebook`)
-            .then(res => res.json())
-            .then((result) => {
-                this.setState({
-                    isLoaded: true,
-                    user: result,
-                });
-            });
-    }
-    render() {
-        return (
-            <div className="search__block">
-                <div className="search__input">
-                    <h1>Start type github user name</h1>
-                    <form action="#">
-                        <input className="input" placeholder="Start type username"/>
-                    </form>
-                </div>
-                <Card user={this.state.user}/>
-            </div>
-        );
-    }
+    useEffect( () => {
+        if(searchStr.length >= 3) {
+            fetch(`https://api.github.com/users/${searchStr}`)
+                .then( res => res.json() )
+                .then( result => props.setUser(result), error => console.log(error) );
+        }
+    }, [searchStr]);
+    return (
+        <div className="search__block">
+            <h1>Start type github user name</h1>
+            <form action="#">
+                <input 
+                    className="search__input" 
+                    placeholder="Start type username"
+                    value={searchStr}
+                    onChange={ (event) => setSearchStr(event.target.value) }
+                />
+            </form>
+        </div>
+    );
 }

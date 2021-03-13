@@ -5,13 +5,10 @@
 }
 .search__input {
     width: 100%;
-}
-.input {
-    width: 100%;
     padding: 5px 0;
     border-bottom: 0.5px solid #ccc;
 }
-.input:focus {
+.search__input:focus {
     border-bottom: 2px solid #673ab7;
     content: '';
 }

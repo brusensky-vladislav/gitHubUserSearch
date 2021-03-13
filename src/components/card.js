@@ -1,6 +1,6 @@
 import './card.css';
 export default function Card(props) {
-    let user = props.user;
+    const user = props.user;
     return (
         <div className="card">
             <div className="card__header">
